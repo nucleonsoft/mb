@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content class="create">
+    <ion-card class="create-account-cont">
+        <ion-card-content>
+            <p>Create a new account.</p>
+
+            <form (ngSubmit)="addNewUser(userData.value)" #f="ngForm" #userData="ngForm">
+              <input type="text" name="username" id="username" placeholder="User Name*" ngModel #username="ngModel" />
+              <div *ngIf="f.submitted && !username.valid" class="invalid-feedback">Username is required.</div>
+
+              <input type="text" name="name" id="name" placeholder="Full Name*" ngModel #name="ngModel" />
+              <div *ngIf="f.submitted && !name.valid" class="invalid-feedback">Fullname is required.</div>
+
+              <input type="text" name="email" id="email" placeholder="Email Address*" ngModel #email="ngModel" />
+              <div *ngIf="f.submitted && !email.valid" class="invalid-feedback">Email address is required.</div>
+
+              <input type="text" name="mobile" id="mobile" placeholder="Mobile No.*" ngModel #mobile="ngModel" />
+              <div *ngIf="f.submitted && !mobile.valid" class="invalid-feedback">Mobile no. is required.</div>
+
+              <input type="password" name="password" id="password" placeholder="Password*" ngModel #password="ngModel" />
+              <div *ngIf="f.submitted && !password.valid" class="invalid-feedback">Password is required.</div>
+
+              <input type="submit" name="submit" value="Create Account" class="createbtn" />
+            </form>
+            
+        </ion-card-content>
+    </ion-card>
+
+    <div class="ads">Advertisement Here</div>
+</ion-content>

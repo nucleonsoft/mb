@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>userstore</ion-title>
+
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+<ion-card-content>
+
+  <ul>
+    <li *ngFor="let product of userproducts">
+      <p>{{product.product_name}}</p>
+    </li>
+  </ul>
+
+</ion-card-content>
+</ion-card>
+</ion-content>

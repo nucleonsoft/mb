@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+      <ion-buttons slot="start">
+          <ion-back-button></ion-back-button>
+        </ion-buttons>
+    <ion-title>Edit Product</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-content>
+
+    <form id="updateProduct" name="updateProduct" #productData="ngForm" (ngSubmit)="updateProduct(productData.value)">
+        
+      <ion-item>
+        <ion-textarea placeholder="Enter more information here..." name="product_desc" id="product_desc" placeholder="Product Description" required="required" [(ngModel)]="product_desc" ngModel></ion-textarea>
+      </ion-item>
+    
+      <ion-item>
+        <ion-input type="text" name="product_quantity" id="product_quantity" placeholder="Quantity" required="required" [(ngModel)]="product_quantity" ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" name="product_srp" id="product_srp" placeholder="Srp" required="required" [(ngModel)]="product_srp" ngModel></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input type="text" name="product_cost" id="product_cost" placeholder="Cost" required="required" [(ngModel)]="product_cost" ngModel></ion-input>
+      </ion-item>
+        
+        <input type="submit" value="Update Product" style="border: none; width: 100%;" class="createbtn"/>
+        </form>
+   </ion-card-content>
+  </ion-card>
+
+</ion-content>

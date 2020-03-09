@@ -1,0 +1,50 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>
+        Maraming Benta
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+
+<ion-content>
+  <div class="login">
+    <p>Please login using your account or  create one.</p>
+
+    <!--<input type="text" name="email" placeholder="email address" />
+    <input type="password" name="password" placeholder="password" /><br>-->
+
+    <ion-card class="vert-margin">
+      <ion-card-content>
+    <form (ngSubmit)="loginUser()" novalidate class="form" id="form">
+    <div class="form-group">
+      <ion-item>
+        <ion-label position="floating">Username</ion-label>
+        <ion-input type="text" name="username" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" id="username" [(ngModel)]="loginUserData.username" required></ion-input>
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+          <div *ngIf="f.username.errors.required">username is required</div></div>
+
+      </ion-item>
+    </div>
+    <div class="form-group">
+      <ion-item>
+        <ion-label position="floating" required>Password</ion-label>
+        <ion-input type="password" name="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" id="password" [(ngModel)]="loginUserData.password" required ></ion-input>
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+          <div *ngIf="f.password.errors.required">password is required</div></div>
+      </ion-item>
+      </div>
+      <input type="submit" name="submit" value="Login" class="loginbtn" />
+    </form>
+  </ion-card-content>
+      <div class="mid">
+        <p style="float: left;"><a href="#" [routerLink]="['/forgot-password']">Forgot Password</a></p>
+        <p style="float: right;"><a href="#" [routerLink]="['/create-account']">Create Account</a></p>
+    </div>
+  </ion-card>
+
+  </div>
+
+  <div class="ads">Advertisement Here</div>
+
+</ion-content>

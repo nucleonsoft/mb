@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product Details</ion-title>
+
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+      <div class="cart">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge id="cart-badge">0</ion-badge>
+      </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card clas="psnapshot">
+    <ion-card-content>
+        <input value="{{productImg}}"/>
+      <div class="detailpImg">
+          <img src="{{productImg}}"/>
+      </div>
+      <div class="detailContent">
+        <p><strong>Category:</strong> {{productCat}}</p>
+        <p><strong>Item Brand:</strong> {{prodBrand}}</p>
+        <p><strong>Item Name:</strong> {{productName}}</p>
+        <p><strong>Item Description:</strong> {{productDesc}}</p>
+        <p><strong>Stocks Available:</strong> {{productQuantity}}</p>
+        <p><strong>Item Price:</strong> <span class="title price"> ₱ {{productSrp}}</span></p>
+     
+        <button (click)="deleteProduct(productId)">Delete</button>
+        <button>Edit</button>
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

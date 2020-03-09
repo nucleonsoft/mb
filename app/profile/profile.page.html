@@ -1,0 +1,70 @@
+<ion-header>
+    <ion-toolbar>
+            <ion-title>
+              Profile
+            </ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="m1" swipeBackEnabled="false"></ion-menu-button>
+        </ion-buttons>
+
+          <div class="cart">
+            <ion-icon name="cart"></ion-icon>
+            <ion-badge id="cart-badge">0</ion-badge>
+          </div>
+
+  
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+          pullingIcon="arrow-dropdown"
+          pullingText="Pull to refresh"
+          refreshingSpinner="dots">
+        </ion-refresher-content>
+      </ion-refresher>
+
+  <div class="cont">
+
+  <div style="background-color: #C65050; height: 100px;"></div>
+    <div class="profileimg"></div>
+    
+    <div class="pdetails">
+      <p>{{username}}</p>
+      <p><span>Date Joined: March 2018</span></p>
+      <p><i class="fa fa-envelope-open"></i> <span>Email: {{email}}</span></p>
+      <p><i class="	fa fa-mobile-phone" style="font-size: 25px; margin-right: 4px;"></i> <span>Mobile: {{mobile}}</span></p>
+    </div>
+
+    <h6 align="center" class="title">Product Lists</h6>
+    <div style="position: relative; width: 90%; padding-top: 20px; margin-bottom: 100px; left: 20px; border-top: 1px solid rgb(145, 145, 145);">
+    <ul class="productslists">
+      
+        <li style="list-style: none;" *ngIf="userproducts?.length == 0">
+          <p align="center">No products found in your account.<br> Please add your products to start selling.</p>
+          <input type="button" [routerLink]="['/userpage']" routerLinkActive="router-link-active"  name="submit" style="border: none; width: 100%;" value="Add Products" class="createbtn" />
+        </li>
+  
+          <li class="prodlists" *ngFor="let product of userproducts">
+  
+            <div style="width: 45%; margin-right: 10px; position: relative;">
+            <p><img [src]="product.product_img" (click)="onSelect(product)"/></p>
+            <p class="title"><strong>{{(product.product_name.length>14)? (product.product_name | slice:0:14)+'..':(product.product_name)}}</strong></p>
+            <p class="title price">₱ {{product.product_srp}}</p>
+            <p class="title">{{product.product_quantity}} in stock.</p>
+            </div>0
+            
+         </li>
+        </ul>
+    </div>
+    </div>
+  </ion-content>
+
+<div id="name_holder">
+    <p class="fname"><ion-icon name="checkmark-circle" class="check"></ion-icon>{{username}}</p>
+    <p class="followers">12,587 Followers</p>
+    <p class="edit_profile" [routerLink]="['/editprofile']" routerLinkActive="router-link-active"><ion-icon name="create"></ion-icon></p>
+</div>

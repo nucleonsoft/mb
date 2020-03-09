@@ -1,0 +1,28 @@
+<ion-header>
+    <ion-toolbar>
+            <ion-title>
+              Customers
+            </ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="m1" swipeBackEnabled="false"></ion-menu-button>
+        </ion-buttons>
+        
+        <div class="cart">
+          <ion-icon name="cart"></ion-icon>
+          <ion-badge id="cart-badge">0</ion-badge>
+        </div>
+
+
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card class="cholder">
+    <ion-card-content>
+      <ion-input type="search" value="{{(dateSearch.length>10)? (dateSearch | slice:0:10):(dateSearch)}}" class="sbar" placeholder="search customers" style="border: 1px solid rgb(180, 180, 180); border-radius: 2px; margin-bottom: 20px;">
+      <ion-icon name="search" class="search"></ion-icon></ion-input>
+
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

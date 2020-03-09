@@ -1,0 +1,90 @@
+<ion-header>
+  <ion-toolbar>
+          <ion-title>
+            Add Product
+          </ion-title>
+      <ion-buttons slot="start">
+          <ion-menu-button menu="m1" swipeBackEnabled="false"></ion-menu-button>
+      </ion-buttons>
+
+    <ion-title></ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+    <!--<div id="content">-->
+      <ion-card class="pfholder">
+        <ion-card-content class="productform" disabled=False>
+
+          <p class="pverbiage">Add your products here if you want to start selling.</p>
+          <hr />
+
+          <form (ngSubmit)="addNewProduct(productData.value)" #f="ngForm" #productData="ngForm" enctype="multipart/form-data">
+
+            <ion-item>
+                <ion-label>Category</ion-label>
+                <ion-select class="cat" placeholder="Select One"  name="category" placeholder="Category" ngModel #category="ngModel" id="category" required>
+                  <ion-select-option value="Beauty Products">Beauty Products</ion-select-option>
+                  <ion-select-option value="Health Care">Health Care</ion-select-option>
+                  <ion-select-option value="Electronics/Gadgets">Electronics/Gadgets</ion-select-option>
+                  <ion-select-option value="Home Appliances">Home Appliances</ion-select-option>   
+                  <ion-select-option value="Merchandise">Merchandise</ion-select-option>
+                  <ion-select-option value="Men/Women Clothing">Men/Women Clothing</ion-select-option>
+                  <ion-select-option value="Kids/Infants Clothing">Kids/Infants Clothing</ion-select-option>
+                  <ion-select-option value="Sports">Sports</ion-select-option>
+                  <ion-select-option value="Automotive">Automotive</ion-select-option>
+                  <ion-select-option value="Furnitures">Furnitures</ion-select-option>
+                  <ion-select-option value="Accessories">Accessories</ion-select-option>
+                  <ion-select-option value="Gerdening">Gardening</ion-select-option>
+                  <ion-select-option value="Pets Food/Accessories">Pets Food/Accessories</ion-select-option>
+                  <ion-select-option value="Others">Others</ion-select-option>
+                </ion-select>
+              </ion-item>
+
+            <ion-item>
+                <ion-input type="text" name="brand_name" placeholder="Brand Name" ngModel #brand_name="ngModel" id="brand_name" required></ion-input>
+            </ion-item>
+            <!--<input type="text" style="width: 84.9%;" name="brand_name" placeholder="Brand Name" id="brand_name" ngModel #brand_name="ngModel" />-->
+            
+            <ion-item>
+                <ion-input type="text" name="product_name" placeholder="Product Name" id="product_name" ngModel #product_name="ngModel" required></ion-input>
+              </ion-item>
+            <!--input type="text" style="width: 84.9%;" name="product_name" placeholder="Product Name" id="product_name" ngModel #product_name="ngModel" />-->
+            
+            <ion-item>
+                <ion-textarea placeholder="Enter more information here..." name="product_desc" placeholder="Product Description" id="product_desc" ngModel #product_desc="ngModel" required></ion-textarea>
+              </ion-item>
+
+            <ion-item>
+                <ion-input type="text" name="product_quantity" placeholder="Quantity" id="product_quantity" ngModel #product_quantity="ngModel" required></ion-input>
+              </ion-item>
+            <!--<input type="text" style="width: 84.9%;" name="product_quantity" placeholder="Quantity" id="product_quantity" ngModel #product_quantity="ngModel" />-->
+            
+            <ion-item>
+                <ion-input type="text" name="product_srp" id="product_srp" placeholder="Srp" ngModel #product_srp="ngModel" required></ion-input>
+              </ion-item>
+            <!--<input type="text" style="width: 84.9%;" name="product_srp" id="product_srp" placeholder="Srp" ngModel #product_srp="ngModel" />-->
+            
+            <ion-item>
+                <ion-input type="text" name="product_cost" id="product_cost" placeholder="Cost" ngModel #product_cost="ngModel" required></ion-input>
+              </ion-item>
+            <!--<input type="text" style="width: 84.9%;" name="product_cost" id="product_cost" placeholder="Cost" ngModel #product_cost="ngModel" />-->
+            
+            <ion-item class="hidethis">
+                <ion-input type="text" name="product_img" id="product_img" ngModel #product_img="ngModel" required></ion-input>
+            </ion-item>
+            <!--<input type="text" class="hidethis" style="width: 84.9%;" name="product_img" id="product_img" ngModel #product_img="ngModel" />-->
+            
+            <ion-item>
+              <ion-input type="file" [value]="localUrl" accept="image/*" (change)=showPreviewImage($event) name="product_img" id="product_img" ngModel #product_img="ngModel" required></ion-input>
+            </ion-item>
+            <!--<input [src]="localUrl" class="custom-file-input" style="background-color: #fefefe;" type="file" accept="image/*" (change)=showPreviewImage($event) />-->
+            <!--<img style="width: 84.7%; height: auto;" [src]="localUrl" *ngIf="localUrl" class="imgPlaceholder">-->
+            
+            <input type="submit" name="submit" style="border: none; width: 100%;" value="Add Product" class="createbtn" />
+          </form>
+        </ion-card-content>
+      </ion-card>
+    <!--</div>-->
+</ion-content>

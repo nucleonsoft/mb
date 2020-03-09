@@ -1,0 +1,80 @@
+
+<ion-app>
+
+  <ion-menu side="start" menuId="m1" swipeBackEnabled="false">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>
+          Maraming Benta
+        </ion-title>
+
+      </ion-toolbar>
+        <ion-content>
+          <ion-list>
+            <ion-menu-toggle>
+            <ion-item lines="none" button>
+              <ion-icon name="exit" slot="start"></ion-icon>
+              <ion-label><a (click)=logout()>Logout</a></ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+          </ion-list>
+        </ion-content>
+    </ion-header>
+  </ion-menu>
+
+  <ng-container *ngIf="!router.url.includes('/home')">
+    <ng-container *ngIf="!router.url.includes('/forgot-password')">
+      <ng-container *ngIf="!router.url.includes('/password-code')">
+        <ng-container *ngIf="!router.url.includes('/password-success')">
+          <ng-container *ngIf="!router.url.includes('/create-account')">
+
+  <ng-container *ngIf="!router.url.includes('/products')">
+  <div id="name_holder">
+      <p class="fname"><ion-icon name="checkmark-circle" class="check"></ion-icon>{{username}}</p>
+      <p class="followers">12,587 Followers</p>
+      <button class="edit_profile" [routerLink]="['/editprofile']" routerLinkActive="router-link-active" ><ion-icon name="create"></ion-icon></button>
+  </div>
+  </ng-container>
+  
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed" class="circle_add">
+      <ion-fab-button [routerLink]="['/userpage']" routerLinkActive="router-link-active"  color="danger">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+  
+  <ion-tab-bar slot="bottom">
+  
+  <ion-tab-button [routerLink]="['/profile']" routerLinkActive="router-link-active"  class="profile">
+    <ion-icon name="contact"></ion-icon>
+    <ion-label>Profile</ion-label>
+  </ion-tab-button>
+  
+  <ion-tab-button [routerLink]="['/dashboard']" routerLinkActive="router-link-active"  tab="speakers" class="dashboard">
+    <ion-icon name="trending-up"></ion-icon>
+    <ion-label>Dashboard</ion-label>
+  </ion-tab-button>
+  
+  <ion-tab-button [routerLink]="['/customers']" routerLinkActive="router-link-active"  tab="map" class="customers">
+    <ion-icon name="contacts"></ion-icon>
+    <ion-label>Customers</ion-label>
+  </ion-tab-button>
+  
+  <ion-tab-button [routerLink]="['/products']" routerLinkActive="router-link-active"  tab="about" class="products">
+    <ion-icon name="cube"></ion-icon>
+    <ion-label>MB Store</ion-label>
+  </ion-tab-button>
+  </ion-tab-bar>
+  </ng-container>
+  </ng-container>
+  </ng-container>
+  </ng-container>
+  </ng-container>
+
+
+  <ion-router-outlet main></ion-router-outlet>
+
+
+  
+</ion-app>
+
+<!--<div class="ads">Advertisement Here</div>-->

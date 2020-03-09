@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar>
+            <ion-title>
+              Maraming Benta Store
+            </ion-title>
+        <ion-buttons slot="start">
+            <ion-menu-button menu="m1" swipeBackEnabled="false"></ion-menu-button>
+        </ion-buttons>
+        
+        <div class="cart">
+          <ion-icon name="cart"></ion-icon>
+          <ion-badge id="cart-badge">0</ion-badge>
+        </div>
+
+    </ion-toolbar>
+  </ion-header>
+
+<ion-content>
+  <ion-card class="pholder">
+    <ion-card-content class="prods">
+      
+        <ion-input type="text" class="sbar" [(ngModel)]="searchText" placeholder="search products by category, name, price, quantity">
+            <ion-icon name="search" class="search"></ion-icon></ion-input>
+        <div class="cont_store">
+
+    <ul class="productslists">
+         
+        <li class="prodlists" *ngFor="let product of products | filter:searchText">
+
+          <div style="width: 60%; margin-right: 10px; position: relative;">
+          <p><img [src]="product.product_img" (click)="onSelect(product)" /></p>
+          <p class="titleheader"><strong>{{(product.product_name.length>14)? (product.product_name | slice:0:14)+'..':(product.product_name)}}</strong></p>
+          <p class="title price">₱ {{product.product_srp}}</p>
+          <p class="title">{{product.product_quantity}} in stock.</p>
+          </div>
+          
+       </li>
+    
+    </ul>
+      </div>
+    </ion-card-content>
+    </ion-card>
+</ion-content>

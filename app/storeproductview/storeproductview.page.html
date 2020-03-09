@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Product Details</ion-title>
+
+    <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+
+      <div class="cart">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge id="cart-badge">0</ion-badge>
+      </div>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="storeprodview">
+  <ion-card>
+    <ion-card-content>
+      <p class="prodname">{{productName}}</p>
+      <div style="width: 10%; padding-top: 10px; border-bottom: 2px solid #555; margin: 0 auto;"></div>
+      <p class="img"><img src="{{productImg}}" /></p>
+      <p class="srp">₱ {{productSrp}}</p>
+
+      <ng-container *ngIf="currentUser != productUser">
+      <div class="addcart">
+        <div class="cartbtn">
+        <span>Quantity:</span> <input name="qty" value="1" id="qty" style="width: 20%; padding-left: 3px; height: 34px; margin-left: 3px; margin-right: 3px;"/>
+        <button>Add to Cart</button>
+        </div>
+      </div>
+    </ng-container>
+
+    <div>
+      <p (click)="onSelect()">Store Owner: {{productUser}}</p>
+    </div>
+    
+    </ion-card-content>
+  </ion-card>
+</ion-content>
